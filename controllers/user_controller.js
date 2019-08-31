@@ -79,3 +79,7 @@ module.exports.profile = function(req, res) {
         return res.redirect('/user/signin');
     }
 }
+module.exports.signoutcontroller = function(req, res) {
+    req.logout();
+    return res.redirect('/');
+}
