@@ -9,13 +9,18 @@
 
     <%}%>
         <div>
-            <%for( i of posts){%>
+            <%for(let i of post){%>
                 <ul>
                     <li>
                         <p>
-                            <%=i.content%>
-                                <br>
+                            <%if(locals.user && locals.user.id==i.user.id){ %>
                                 <small>
+                                    <a href="/post/destroy/<%=i.user.id%>">X</a>
+                                </small>
+                                <%}%>
+                                    <%=i.content%>
+                                        <br>
+                                        <small>
                             <%=i.user.name%>
                         </small>
                         </p>
